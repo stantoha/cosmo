@@ -1,0 +1,232 @@
+body{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.wrapper{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    display: block;
+    margin: 0 auto;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.content{
+    flex: 100%;
+    display: block;
+}
+
+.content-item{
+    display: block;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.content-item-title-link{
+    text-decoration: none;
+    color: white;
+}
+
+.sunrotate{
+    animation-name: sunrot;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+}
+
+@keyframes sunrot{
+    0%{
+        transform: rotate(360deg);
+    }
+    25%{
+        transform: rotate(720deg);
+    }
+    50%{
+        transform: rotate(1080deg);
+    }
+
+    100%{
+        transform: rotate(1440deg);
+    }
+}
+
+ul.planets{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 10px;
+    align-items: center;
+    align-self: center;
+    transform-origin: center;
+}
+
+.planets li{
+    display: block;
+    position: absolute;
+    padding: 0;
+    background-color: black;   
+    border-radius:50% ;
+    width: 1px;
+    height: 1px;
+    margin: 0 auto;
+    
+}
+
+.planets a,
+.planets a img{
+    display: none;
+}
+
+.planets li.sun{
+    transform: scale(285);
+    background-color: orange;
+    top:50vh;
+    left:50vw;
+}
+
+.planets li.mercury{
+    transform: scale(1);
+    background-color: brown;
+    top: 50vh;
+    left:45vw ;
+    /* animation-name: mercury-orbit;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;transform: skewX(45deg); */
+}
+/* 
+@keyframes mercury-orbit{
+    0%{
+        top: 50vh;
+        left:45vw ;
+        transform: rotate(0deg);
+    }
+    9%{
+        top: 65vh;
+        left: 46vw;
+    }
+    18%{
+        top:70vh;
+        left:48vw;
+        opacity: 1;
+    }
+    25%{
+        top: 75vh;
+        left: 50vw;
+        transform:rotate(360deg);
+        opacity: 0.7;
+    }
+    34%{
+        top: 70vh;
+        left: 55vw;
+        opacity: 0.5;
+    }
+    43%{
+        top: 58vh;
+        left: 58vw;
+        opacity: 0;
+    }
+
+    50%{
+        top: 45vh;
+        left: 60vw;
+        transform: rotate(720deg);
+        opacity: 0;
+    }
+    58%{
+        top: 25vh;
+        left: 58vw;
+        opacity: 1;
+    }
+    67%{
+        top: 15vh;
+        left: 56vw;
+    }
+
+    75%{top: 5vh;
+        left: 54vw;
+        transform:rotate(1080deg);
+    }
+    84%{
+        top: 20vh;
+        left: 50vw;
+    }
+    93%{
+        top:40vh;
+        left: 47vw;
+    }
+    100%{top: 50vh;
+        left:45vw ;
+        transform:rotate(1440deg);
+    }
+} */
+
+.planets li.venus{
+    transform: scale(2.48);
+    background-color: orangered;
+    top: 50vh;
+    left:40vw ;
+}
+
+.planets li.earth{
+    transform: scale(2.61);
+    background-color: skyblue;
+    top: 50vh;
+    left:35vw ;
+}
+
+.planets li.mars{
+    transform: scale(1.39);
+    background-color: red;
+    top: 50vh;
+    left:30vw ;
+}
+
+.planets li.jupiter{
+    transform: scale(28.65);
+    background-color: burlywood;
+    top: 50vh;
+    left:25vw ;
+}
+
+.planets li.saturn{
+    transform: scale(23.9);
+    background-color: rgb(124, 110, 92);
+    top: 50vh;
+    left:20vw ;
+}
+
+.planets li.uranus{
+    transform: scale(10.4);
+    background-color: rgb(51, 153, 194);
+    top: 50vh;
+    left:15vw ;
+}
+
+.planets li.neptune{
+    transform: scale(10.1);
+    background-color: blue;
+    top: 50vh;
+    left:10vw ;
+}
