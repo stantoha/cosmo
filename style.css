@@ -51,8 +51,7 @@ body{
     animation-iteration-count: infinite;
     animation-duration: 30s;
     animation-timing-function: linear;
-    animation-play-state: paused;
-}
+/*  */}
 
 @keyframes sunrot{
     0%{
@@ -110,12 +109,12 @@ ul.planets{
     background-color: brown;
     top: 50vh;
     left:45vw ;
-    /* animation-name: mercury-orbit;
+    animation-name: mercury-orbit;
     animation-duration: 10s;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;transform: skewX(45deg); */
+    animation-iteration-count: infinite;transform: skewX(45deg);
 }
-/* 
+
 @keyframes mercury-orbit{
     0%{
         top: 50vh;
@@ -180,7 +179,7 @@ ul.planets{
         left:45vw ;
         transform:rotate(1440deg);
     }
-} */
+}
 
 .planets li.venus{
     transform: scale(2.48);
