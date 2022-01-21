@@ -1,31 +1,312 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    margin: 0 10vw;
+    padding: 0;
+    background-color: black;
+   height: 100%;
+    
+}
+ 
+.multi_bg_example,
+.wrapper{
+    display: block;
+    align-self: center;
+    margin: 0 auto;
+    overflow: hidden;
+    max-height: 1250px;
+    background-image: url("img/solar-system-left.jpg"),  linear-gradient(to bottom, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+    background-repeat: no-repeat,    no-repeat;
+    background-position:top, bottom ;
+    background: -moz-linear-gradient(to bottom, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)), -webkit-gradient(to bottom, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)), -ms-linear-gradient(to bottom, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)), linear-gradient(to bottom, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+    background-size:cover ;
+}
+
+.bg{
+    animation-name: bg;
+    animation-duration: 1800s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bg{
+    from{
+        background-position:left top;
+    }
+    to{
+        background-position:right bottom;
+    }
+}
+
+/* .basic-container{
+    display: grid;
+   
+   
+    grid-template-areas:
+    ". hd hd hd hd hd hd ."
+    ". mn mn mn mn mn mn ."
+    ". mn mn mn mn mn mn ."
+    ". mn mn mn mn mn mn ."
+    ". mn mn mn mn mn mn ."
+    ". mn mn mn mn mn mn ."
+    ". ft ft ft ft ft ft ." ;
+    grid-template-columns:0.1fr 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr ;
+    grid-template-rows:auto 1fr auto 1fr auto 1fr auto;
+} */
+
+.hidden{
+    visibility: hidden;
+    position: absolute;
+    height: 0;
+}
+
+
+
+/*HEADER*/
+
+.header-container{
+    grid-area: hd;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    padding: 0 ;
+    margin:0 auto ;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    right: 0;
+}
+
+.header{
+    display: flex;
+    align-self: center;
+    justify-content: space-between ;
+    align-items: center;
+    padding: 5px;
+    margin: 0 5vw;
+    height: 10vh;
+}
+
+.header-left,
+.header-right{
+    flex: 50%;
+    display: block;
+    justify-content:flex-start;
+}
+
+
+
+.header-left-section,
+.header-right-section{
+    display:flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 5px 50px;
+    margin:5px auto;
+}
+
+.header-left-section{
+    float: left;
+}
+
+.header-right-section{
+    float: right;
+}
+
+.header-right-section{
+    justify-content: flex-end;
+}
+.header a.logo{
+    display:block;
+    width: 58px;
+    height: 58px;
+    border: 1px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    align-self: center  ;
+    transition: 0.3s;
+}
+
+.header a:hover.logo{
+    transform: scale(1.3) rotate(360deg);
+}
+
+.header a:active.logo{
+    color: skyblue;
+    transform: scale(1.1) rotate(-360deg);
+}
+
+
+.header h1.title{
+    display: block;
+    margin:0;
+}
+.header h1.title a{
+    text-decoration: none;
+    letter-spacing: 5px ;
+    color: white;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s;
+}
+
+.header h1.title a:hover{
+   
+    color: rgb(245, 154, 35);
+    
+}
+.sign-form{
+    display: flex;
+   flex-direction: column;
+   align-content: center;
+}
+
+
+.form-col{
+    display: flex;
+  
+    align-items: center;
+}
+.form-col label{
+    color: white;
+    
+    width: 80px;
+    padding:5px;
+    justify-content: flex-start;
+    margin-right: 5px;
+    font-size:0.7 ;
+    font-weight: 300;
+    opacity: 0.5;
+}
+
+.form-col input{
+    justify-content:flex-end;
+    height: 30%;
+    width: 120px;
+}
 
 
 
 
-.object-item{
+
+.title a:hover{
+    color: skyblue;
+    transform:translateY(5px) scale(1.3);
+}
+
+.title a:active{
+    color: tomato;
+}
+
+.burger{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width: auto;
     height: 50px;
+}
+
+.nav-btn{
+    display: block;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .nav-btn > span,
+  .nav-btn > span::before,
+  .nav-btn > span::after {
+      display: block;
+      position: absolute;
+      top: 25px;
+    width: 45px;
+    height: 9px;
+    background-color: white;
+    transition-duration: .25s;
+  }
+  .nav-btn > span::before {
+    content: '';
+    top: -15px;
+  }
+  .nav-btn > span::after {
+    content: '';
+    top: 15px;
+  }
+  
+  .nav{
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 10vw;
+    height: 100%;
+    margin: 0;
+    padding: 150px 0;
+    list-style: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+  }
+ 
+  .nav-item{
+    height: 60px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin: 5px;
+    padding: 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    text-align: start;
+    position: relative;
 }
-.solarSystem,
-.object-link{
-    width: 10em;
+
+
+  a.nav-link {
+    display: block;
+    padding: 12px 24px;
     color: white;
-}
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    margin: 0;
+    font-weight: 700;
+    text-decoration: none;
+    transition-duration: .75s;
+  }
+ 
+   
+   
+  #nav-toggle{
+    opacity: 0;
+  }
+   
+  #nav-toggle:checked ~ .nav-btn > span{
+    transform: rotate(45deg);
+  }
+  #nav-toggle:checked ~ .nav-btn > span::before{
+    top: 0;
+    transform: rotate(0);
+  }
+  #nav-toggle:checked ~ .nav-btn > span::after{
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #nav-toggle:checked ~ .nav{
+    visibility: visible;
+    left: 0;
+  } 
 
-a:hover.object-link,
-a:hover.solarSystem{
-    color: grey;
-}
-
-
+  #nav-toggle:checked ~ .nav-btnl >img {
+      position: absolute;
+    transform: translateX(-100px) rotate(360deg);
+  }
 
 
 .planet{
     position: absolute;
     overflow: hidden;
-
 }
 
 .realsun,
@@ -562,72 +843,71 @@ a:hover.solarSystem{
     }
 }
 
-
-.tabcontainer {
-    display: flex;
-    margin: 0 auto;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, .25)
-}
-
+.tabcontent__container{
+    display: block;
+    margin: 10vh auto 0;
+    padding: 50px;
+} 
 .tabcontent {
-    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 70vw;
 }
 
+.tabcontent h2,
+.tabcontent p,
+.tabcontent  span{
+    color: white;
+    
+}
 
-
+/* .tabcontent img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+} */
+.tabcontent__descr__list{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
 .tabcontent__descr {
-    position: absolute;
-    top: 300px;
-    right: -177px;
-    width: 550px;
-    height: 359px;
-    background: rgba(251, 254, 93, .8);
+    display: block;
+    margin: 0 auto;
     padding: 50px;
     font-size: 24px;
     font-weight: 300;
     line-height: 36px;
-    color: rgba(0, 0, 0, .7)
+    color: white;
 }
 
-.tabheader {
- 
-    padding: 35px 30px;
-    background-color: #fff
-}
-
-.tabheader h3 {
-    font-weight: 700;
-    font-size: 16px
-}
 
 .tabheader__items {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 35px;
-    padding-left: 26px;
-    border-left: 1px solid #000
+    flex-direction: column;     
+    position: absolute;
+    margin-top: 50px;
+    top: 200px;
 }
 
 .tabheader__item {
-    font-weight: 700;
-    font-size: 18px;
-    font-weight: 300;
-    margin-top: 10px;
-    color: rgba(0, 0, 0, .6);
+    display: block;
+    padding: 5px;
+    margin: 5px;
+    font-weight: 500;
     cursor: pointer;
     transition: .3s all
 }
 
-.tabheader__item_active {
-    color: #000;
-    font-size: 22px;
-    font-weight: 700
+
+a.tabheader__link{
+    color: white;
+    transition: 0.5s;
 }
 
-
-.block__btn__active{
+a.tabheader__link__active{
     color:red;
+    transform: scale(2);
 }
 
 .hide{
@@ -653,4 +933,10 @@ a:hover.solarSystem{
     }
 }
 
+.up__button img{
+    position: fixed;
+    transform: scale(1.5);
+    bottom: 300px;
+    right: 50px;
+}
 
